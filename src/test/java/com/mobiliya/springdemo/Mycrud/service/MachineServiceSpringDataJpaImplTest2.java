@@ -36,6 +36,20 @@ public class MachineServiceSpringDataJpaImplTest2 {
         verify(machineServiceSpringDataJpa,times(1)).deleteMachine(1);
     }
 
+    @Test
+    public void updateMachine_Basic(){
+        doNothing().when(machineServiceSpringDataJpa).updateMachine(isA(Machine.class));
+        machineServiceSpringDataJpa.updateMachine(machine);
+        verify(machineServiceSpringDataJpa,times(1)).updateMachine(machine);
+    }
+
+    @Test
+    public void addMachine_Basic(){
+        doNothing().when(machineServiceSpringDataJpa).addMachine(isA(Machine.class));
+        machineServiceSpringDataJpa.addMachine(machine);
+        verify(machineServiceSpringDataJpa,times(1)).addMachine(machine);
+    }
+
 
 
 }
